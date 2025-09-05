@@ -17,6 +17,10 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
+    
+    private int discountedPrice;
+    
+    private boolean discountApplied;
 
     /**
      * Create a machine that issues tickets of the given price.
@@ -58,6 +62,15 @@ public class TicketMachine
         }
     }
 
+    public void applyDiscount()
+    {
+        int discount;
+        discount = 2; 
+        discountedPrice = price / discount;
+        
+        discountApplied = true;
+    }
+    
     /**
      * Print a ticket if enough money has been inserted, and
      * reduce the current balance by the ticket price. Print
@@ -65,9 +78,7 @@ public class TicketMachine
      */
     public void printTicket()
     {
-        int amountLeftToPay;
-        amountLeftToPay = price - balance; 
-        if(amountLeftToPay <= 0) {
+        if(balance >= price && !discountApplied) {
             // Simulate the printing of a ticket.
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
@@ -81,8 +92,25 @@ public class TicketMachine
             // Reduce the balance by the price.
             balance = balance - price;
         }
-        else {
-            System.out.println("You must still pay: " + amountLeftToPay);
+        else if (discountApplied)
+        {
+            System.out.println("##################");
+            System.out.println("# The BlueJ Line");
+            System.out.println("# Ticket");
+            System.out.println("# " + discountedPrice + " cents.");
+            System.out.println("##################");
+            System.out.println();
+
+            // Update the total collected with the price.
+            total = total + discountedPrice;
+            // Reduce the balance by the price.
+            balance = balance - discountedPrice;
+            
+            discountApplied = false;
+        }
+        else 
+        {
+            System.out.println("Insert the correct amount of money to continue.");
         }
         }
 

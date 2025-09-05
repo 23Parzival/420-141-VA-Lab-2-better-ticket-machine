@@ -38,4 +38,6 @@
 61. It does compile. The price is set to zero even though it was set to 23 cents. This is because 
     by adding int, you are creating a field but price is already declared as a field.
 
-
+64. Fields, discountedPrice and discountApplied need to be added along with the apply discount method.
+    The existing method of print ticket needs an else if statement added to detect if the discount has been 
+    applied and then print the ticket with that applied discount.
