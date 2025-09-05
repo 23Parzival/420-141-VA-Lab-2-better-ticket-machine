@@ -79,9 +79,7 @@ public class TicketMachine
             // Reduce the balance by the price.
             balance = balance - price;
         }
-        
         }
-    
 
     /**
      * Return the money in the balance.
@@ -93,5 +91,14 @@ public class TicketMachine
         amountToRefund = balance;
         balance = 0;
         return amountToRefund;
+    }
+    
+    public void affordable(int budget){
+    if (price > budget){
+        System.out.println("Too expensive.");
+    }
+    else {
+        System.out.println("Just right.");
+    }
     }
 }

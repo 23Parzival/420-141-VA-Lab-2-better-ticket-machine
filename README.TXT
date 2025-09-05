@@ -18,4 +18,10 @@
 52. It is possible to remove it but now the user does not know if the machine needs more money to 
     be inserted. Nothing happens if no money is inserted.
 
+53. No because a ticket will not print unless the required amount is there in the first place.
+
+55. `saving = price * discount;`
+
+56. `mean = total / count;`
+
 
