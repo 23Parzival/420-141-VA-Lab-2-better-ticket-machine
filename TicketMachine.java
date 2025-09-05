@@ -50,11 +50,11 @@ public class TicketMachine
      */
     public void insertMoney(int amount)
     {
-        if(amount > 0) {
-            balance = balance + amount;
+        if(amount <= 0) {
+            System.out.println("Use a positive amount rather than: " + amount);
         }
         else {
-            System.out.println("Use a positive amount rather than: " + amount);
+            balance = balance + amount;
         }
     }
 
@@ -79,11 +79,9 @@ public class TicketMachine
             // Reduce the balance by the price.
             balance = balance - price;
         }
-        else {
-            System.out.printf("You must insert at least %d more cents.%n",
-                              price - balance);
+        
         }
-    }
+    
 
     /**
      * Return the money in the balance.
