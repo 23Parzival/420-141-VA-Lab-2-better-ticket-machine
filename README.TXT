@@ -24,4 +24,13 @@
 
 56. `mean = total / count;`
 
+58. The one with space is easier to understand. 
+
+59. Because the value stored in balance is lost before saving it to another variable. 
+    The balance is set to zero without actually refunding anything. The value of balance is then returned
+    but since it was set to zero it will always just return zero and not the value that was left in balance
+    before it was set to zero. You can test this by inserting too much money in both cases and then buying a ticket
+    and finally asking fora refund on the remaining balance, the original will return the right value and 
+    this one will return zero.
+
 
