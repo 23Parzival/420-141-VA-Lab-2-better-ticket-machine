@@ -101,4 +101,12 @@ public class TicketMachine
         System.out.println("Just right.");
     }
     }
+    
+    public int emptyMachine()
+    {
+        int emptiedMoney;
+        emptiedMoney = total;
+        total = 0;
+        return emptiedMoney;
+    }
 }

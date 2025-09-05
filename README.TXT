@@ -33,4 +33,9 @@
     and finally asking fora refund on the remaining balance, the original will return the right value and 
     this one will return zero.
 
+60. If you want to change and return a value, the value must be changed BEFORE it is returned.
+
+61. It does compile. The price is set to zero even though it was set to 23 cents. This is because 
+    by adding int, you are creating a field but price is already declared as a field.
+
 
